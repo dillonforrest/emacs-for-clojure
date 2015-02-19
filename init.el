@@ -9,11 +9,11 @@
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
-;;                          ("melpa" . "http://melpa-stable.milkbox.net/packages/")))
+;;                          ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 
 ;; Load and activate emacs packages. Do this first so that the
@@ -66,7 +66,9 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    evil))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -96,6 +98,9 @@
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
+
+(require 'evil)
+(evil-mode 1)
 
 
 ;;;;
